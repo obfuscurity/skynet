@@ -18,13 +18,9 @@
 ## Workers
 
 * id
-* type - mapper, reducer, splitter
-
-## Tasks
-
-* id
 * job_id
-* worker_id
-* state
+* uuid - provided by process
+* type - mapper, reducer, splitter
+* state - starting, idling, working, finished
 * progress
 
