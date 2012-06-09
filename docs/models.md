@@ -11,21 +11,20 @@
 
 * id
 * user_id
-* map_id
-* reduce_id
-* data_id
+* mapper_code
+* reducer_code
+* data_url
 
-## Maps
-
-* id
-* code
-
-## Reduces
+## Workers
 
 * id
-* code
+* type - mapper, reducer, splitter
 
-## Data
+## Tasks
 
 * id
-* url
+* job_id
+* worker_id
+* state
+* progress
+
