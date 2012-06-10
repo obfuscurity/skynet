@@ -25,17 +25,20 @@ module Skynet
     helpers do
     end
 
-    get '/users/:user_id/jobs/:job_id/status' do
-      Tasks.filter(:user_id => params[:user_id], :job_id => param[:id]).to_json
-    end
-
     get '/users/:user_id/jobs' do
-      Jobs.filter(:user_id => params[:user_id]).to_json
+      @jobs = []
+      Job.filter(:user_id => params[:user_id]).all.each {|j| @jobs << j.values}
+      @jobs.each do |job|
+        @workers = []
+        Worker.filter(:job_id => job[:id]).all.each {|w| @workers << w.values}
+        job[:workers] = @workers
+      end
+      @jobs.to_json
     end
 
     post '/users/:user_id/jobs' do
-      @job = Jobs.new(params).save
-      @job.to_json
+      @job = Job.new(params).save
+      @job.values.to_json
     end
   end
 end
