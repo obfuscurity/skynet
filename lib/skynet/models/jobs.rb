@@ -17,11 +17,9 @@ class Job < Sequel::Model
   plugin :prepared_statements_safe
   plugin :validation_helpers
 
-  def before_validation
+  def before_create
     super
-  end
-
-  def validate
-    super
+    self.created_at = Time.now
+    self.updated_at = Time.now
   end
 end
