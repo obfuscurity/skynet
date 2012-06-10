@@ -28,6 +28,11 @@ module Skynet
     get '/users/:user_id/jobs' do
       @jobs = []
       Job.filter(:user_id => params[:user_id]).all.each {|j| @jobs << j.values}
+      @jobs.each do |job|
+        @workers = []
+        Worker.filter(:job_id => job[:id]).all.each {|w| @workers << w.values}
+        job[:workers] = @workers
+      end
       @jobs.to_json
     end
 
