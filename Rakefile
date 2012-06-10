@@ -38,9 +38,10 @@ end
 
 #namespace :queue do
 #
-#  require "resque/tasks"
-#  require "lib/skynet/models/all"
+#  require 'resque/tasks'
+#  require './lib/skynet/config'
+#  require './lib/skynet/models/all'
 #
-#  Resque.redis = ENV['REDISTOGO_URL']
-#  task :work => "resque:splitter"
+#  Resque.redis = Config.redistogo_url
+#  task :qworker => "resque:worker"
 #end
