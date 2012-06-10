@@ -37,4 +37,6 @@ module Skynet
       @job = Jobs.new(params).save
       @job.to_json
     end
+  end
+end
 
