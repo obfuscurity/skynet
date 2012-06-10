@@ -1,6 +1,12 @@
 # Skynet as a Service
 
+Skynet, the main antagonist in the Terminator franchise, is a fictional artificial intelligence system which becomes self-aware and decides to terminate humanity, its creators. Skynet is rarely seen onscreen, with its actions often performed via robots, cyborgs (usually a Terminator), and other computer systems.
+
+Skynet, the [Baltimore Hackathon](http://baltimorehackathon.com/) antagonist, is a proof-of-concept application for applying concepts in Parallel Computing to the Cloud Computing deployment and provisioning model. Customer jobs can be submitted through Skynet's state-of-the-art (for 1980's-era entertainment), split up equally across a customer-requested number of processing nodes, sorted, reduced, and aggregated for the final result.
+
 ## Deployment
+
+In order to simplify deployment we're making use of David Dollar's excellent [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi) project. This allows you to run concurrent Heroku processes using ddifferent languages/buildpacks.
 
 ### Initial Setup
 
