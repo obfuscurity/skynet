@@ -10,17 +10,27 @@
 ### Splits
 
 ```json
+{
+  uri: 'httpPathSpec'
+}
 ```
 
-### Maps
+### Map / Reduce Workers
+
+Job Information:
 
 ```json
+{
+  code: 'function () { ... }',
+  dataFile: 'pathToFileInS3',
+  dataLength: numRecordsInDataFile,
+  jobType: ( 'map' | 'reduce' ),
+  jobId: 12345,
+  workerCount: 16,
+  workerNumber: 12
+}
 ```
-
-### Reduces
-
-```json
-```
+Pro
 
 ## Job Status
 
