@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
 $:.unshift(File.expand_path(File.join(File.dirname($0), "../lib")))
+require 'skynet/web'
 
 Skynet::Web.start
