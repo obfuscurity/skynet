@@ -1,7 +1,80 @@
+<!doctype html>
 <html>
-  <head>
-    <title>Cyberdyne Systems Inc.</title>
-  </head>
-  <body>
-  </body>
+ <head>
+  <title>SkyNet</title>
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="/lib/jquery.hotkeys-0.7.9.js"></script>
+  <script type="text/javascript" src="/lib/jquery.browser.js"></script>
+  <script type="text/javascript" src="/lib/jquery.konami.js"></script>
+  <!--script type="text/javascript" src="/lib/cli.js"></script-->
+  <script type="text/javascript" src="/lib/skynet.js"></script>
+ </head>
+ <body> 
+   <div id="logo"></div>
+   
+   
+   <div id="monitor">
+    <p id="total">
+      Running Workers
+      <strong></strong>
+    </p>
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th></th>
+          <th>Progress</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+   </div>
+
+
+   <div id="worker"></div>
+
+
+   <div id="input">
+    <form action="/user/1/jobs" method="post">
+      <fieldset>
+        <p>Create new job...</p>
+        <label>Cluster Size: </label>
+        <input id="nodes" />
+
+        <label>Data URL: </label>
+        <input id="data_url" />
+
+        <label>Cluster Size: </label>
+        <input id="nodes" />
+      </fieldset>
+      <fieldset id="editors">
+        <label>Mapper Code: </label>
+        <textarea id="mapper_code"></textarea>
+
+        <label>Reducer Code: </label>
+        <textarea id="reducer_code"></textarea>
+      </fieldset>
+    </form>
+   </div>
+   
+   
+   <div id="menu">
+    <p id="userinfo">
+      User: <em>MDYSON</em>
+      <strong></strong>
+    </p>
+    <ul id="commands">
+      <li>[f5] Jobs</li>
+      <!--li>[f6] New Job</li-->
+      <li>[f7] Logoff</li>
+    </ul>
+   </div>
+ </body>
 </html>
+
