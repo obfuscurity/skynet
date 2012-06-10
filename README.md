@@ -2,6 +2,8 @@
 
 ## Deployment
 
+### Initial Setup
+
 ```bash
 $ heroku create -s cedar sky-net-web
 $ heroku addons:add redistogo -a sky-net-web
