@@ -25,6 +25,10 @@ module Skynet
     helpers do
     end
 
+    get '/' do
+      erb :index
+    end
+
     get '/users/:user_id/jobs' do
       @jobs = []
       Job.filter(:user_id => params[:user_id]).all.each {|j| @jobs << j.values}
