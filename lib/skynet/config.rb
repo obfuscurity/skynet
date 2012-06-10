@@ -5,5 +5,6 @@ module Skynet
     end
 
     def self.port; env!("PORT").to_i; end
+    def self.rack_env; env!("RACK_ENV"); end
   end
 end

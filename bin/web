@@ -1,5 +1,24 @@
 #!/usr/bin/env ruby
 
 $:.unshift(File.expand_path(File.join(File.dirname($0), "../lib")))
+require 'skynet/config'
+require 'skynet/web'
+require 'thin'
 
-Skynet::Web.start
+module Skynet
+  class Server
+    def self.start
+      @server = Thin::Server.start('0.0.0.0', Config.port) do
+        run Skynet::Web
+      end
+      ["TERM", "INT"].each do |signal|
+        Signal.trap(signal) do
+          @server.stop!
+          Kernel.exit!(0)
+        end
+      end
+    end
+  end
+end
+
+Skynet::Server.start
