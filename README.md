@@ -2,6 +2,15 @@
 
 ## Deployment
 
+```bash
+$ heroku create -s cedar sky-net-web
+$ heroku addons:add redistogo -a sky-net-web
+$ heroku addons:add heroku-postgresql:dev -a sky-net-web
+$ heroku create -s cedar sky-net-worker
+$ heroku create -s cedar sky-net-splitter
+$ heroku create -s cedar sky-net-scheduler
+```
+
 ### Local
 
 #### Web
