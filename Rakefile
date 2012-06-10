@@ -36,11 +36,11 @@ namespace :db do
   end
 end
 
-#namespace :queue do
-#
-#  require "resque/tasks"
-#  require "lib/skynet/models/all"
-#
-#  Resque.redis = ENV['REDISTOGO_URL']
-#  task :work => "resque:data"
-#end
+namespace :queue do
+
+  require "resque/tasks"
+  require "lib/skynet/models/all"
+
+  Resque.redis = ENV['REDISTOGO_URL']
+  task :work => "resque:splitter"
+end

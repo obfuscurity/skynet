@@ -2,8 +2,8 @@
 
 ## Queues
 
-* spq - split tasks
-* mrq - map and reduce tasks
+* splitter - split tasks
+* scheduler - map and reduce tasks
 
 ## Tasks
 
