@@ -1,0 +1,137 @@
+/* ========================================================================= *\
+ * Spit and Shine!
+\* ========================================================================= */
+
+
+body {
+  color:            #0f0;
+  background:       black;
+  font:             12px/1em "Inconsolata", monospace;
+  text-transform:   uppercase;
+  }
+
+
+#logo {
+  position:         absolute;
+  right:            15px;
+  bottom:           15px;
+  width:            162px;
+  height:           119px;
+  background:       url("/img/logo.png") no-repeat 50% 50%;
+  }
+
+
+/* Menu */
+#menu {
+  position:         absolute;
+  left:             25px;
+  bottom:           15px;
+  width:            450px;
+  }
+#userinfo {
+  position:         relative;
+  padding:          3px 5px;
+  color:            black;
+  background:       #0f0;
+  font-weight:      bold;
+  }
+#userinfo strong {
+  position:         absolute;
+  right:            5px;
+  }
+#commands {
+  padding:          0;
+  list-style:       none;
+  }
+#commands li {
+  display:          inline-block;
+  margin-right:     15px;
+  }
+
+
+/* Monitor */
+#monitor {
+  position:         absolute;
+  top:              25px;
+  left:             25px;
+  width:            450px;
+  }
+#total {
+  position:         relative;
+  margin:           0;
+  padding:          8px 0 8px 8px;
+  border:           1px solid #0f0;
+  border-width:     1px 0;
+  color:            white;
+  font-weight:      700;
+  }
+#total strong {
+  position:         absolute;
+  display:          inline-block;
+  right:            8px;
+  }
+
+#monitor table { width:100%; margin-bottom:25px; }
+#monitor table thead tr { background:url("/img/dotted.png") repeat-x left bottom; }
+#monitor table th { padding: 8px 0 10px; text-align:left; }
+#monitor table th:last-child { text-align:right; }
+#monitor table th:nth-child(1) { width:20%; padding-left:8px; }
+#monitor table th:nth-child(2) { width:50%; }
+#monitor table th:nth-child(3) { width:15%; padding-left:1em; }
+#monitor table th:nth-child(4) { width:15%; padding-right:8px;}
+
+#monitor table td { line-height:30px; }
+#monitor table td:nth-child(3) { padding-left:1em; }
+#monitor table td:first-child { padding-left:8px; }
+#monitor table td:last-child { text-align:right; padding-right:8px; }
+
+#monitor table tr.highlight td {
+  color:            black;
+  background:       #0f0;
+  }
+
+#monitor .progressbar { background:#030; }
+#monitor .progressbar div { height:5px; background:#0f0; }
+#monitor .highlight .progressbar { background:#000; }
+#monitor .highlight .progressbar div { background:#080; }
+
+
+/* Worker Display */
+#worker {
+  position:         absolute;
+  display:          none;
+  top:              25px;
+  left:             500px;
+  border:           1px solid #0f0;
+  }
+#worker dl {
+  margin:           0;
+  padding:          20px;
+  min-width:        30em;
+  }
+#worker dt {
+  clear:            both;
+  float:            left;
+  width:            6em;
+  line-height:      2em;
+  }
+#worker dd {
+  line-height:      2em;
+  white-space:      nowrap;
+  }
+
+
+/* Input Display */
+#input {
+  position:         absolute;
+  display:          none;
+  top:              25px;
+  left:             25px;
+  right:            25px;
+  bottom:           150px;
+  border:           1px solid #0f0;
+  background:       black;
+  }
+
+
+em { font-style:normal; }
