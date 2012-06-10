@@ -11,6 +11,7 @@ Sequel.migration do
 
     create_table(:jobs) do
       primary_key :id
+      Integer     :nodes,                      :null => false
       String      :mapper_code,                                :text => true
       String      :reducer_code,                               :text => true
       String      :data_url,                                   :text => true
