@@ -10,8 +10,8 @@ module Skynet
     configure do
       enable :logging
       enable :method_override
-      disable :raise_errors if ENV['RACK_ENV'].eql?("production")
-      disable :show_exceptions if ENV['RACK_ENV'].eql?("production")
+      disable :raise_errors if Config.rack_env.eql?("production")
+      disable :show_exceptions if Config.rack_env.eql?("production")
     end
 
     before do
@@ -25,15 +25,15 @@ module Skynet
     helpers do
     end
 
-    get '/jobs/:id/status' do
-      Tasks.filter(:job_id => param[:id]).to_json
+    get '/users/:user_id/jobs/:job_id/status' do
+      Tasks.filter(:user_id => params[:user_id], :job_id => param[:id]).to_json
     end
 
-    get '/jobs' do
-      Jobs.all.to_json
+    get '/users/:user_id/jobs' do
+      Jobs.filter(:user_id => params[:user_id]).to_json
     end
 
-    post '/jobs' do
+    post '/users/:user_id/jobs' do
       @job = Jobs.new(params).save
       @job.to_json
     end
