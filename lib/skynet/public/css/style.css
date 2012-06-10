@@ -132,6 +132,51 @@ body {
   border:           1px solid #0f0;
   background:       black;
   }
+#input fieldset { border:none; }
+#input label { display:inline-block; }
+#input input,
+#input textarea {
+  border:           1px solid #0f0;
+  color:            #0f0;
+  background:       #000;
+  font-family:      monospace;
+  font-size:        14px;
+  outline:          none;
+  }
+#input button {
+  position:         absolute;
+  right:            25px;
+  bottom:           25px;
+  padding:          4px 8px;
+  border:           1px solid #0f0;
+  color:            #0f0;
+  background:       #000;
+  font-family:      "Inconsolata", monospace;
+  font-size:        14px;
+  text-transform:   uppercase;
+  }
+#metadata {
+  float:            left;
+  width:            25%;
+  padding:          25px;
+  }
+#metadata p { margin-bottom:4em; }
+#metadata label { clear:both; width:8em; }
+#metadata input { margin-bottom:25px; }
+#editors { padding:7em 25px 25px; }
+#editors label { margin-bottom:5px; }
+#editors #mapper_code { margin-bottom:25px; }
+#editors textarea { width:100%; height:20em; }
+
+#response-status {
+  position:         absolute;
+  display:          inline-block;
+  bottom:           25px;
+  left:             25px;
+  padding:          3px 5px;
+  color:            #000;
+  background:       #0f0;
+  }
 
 
 em { font-style:normal; }

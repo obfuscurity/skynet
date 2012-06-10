@@ -4,14 +4,14 @@
   <title>SkyNet</title>
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
   <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   
   <script type="text/javascript" src="/js/jquery.hotkeys-0.7.9.js"></script>
   <script type="text/javascript" src="/js/jquery.browser.js"></script>
   <script type="text/javascript" src="/js/jquery.konami.js"></script>
-  <!--script type="text/javascript" src="/js/cli.js"></script-->
+  <!--script type="text/javascript" src="/lib/cli.js"></script-->
   <script type="text/javascript" src="/js/skynet.js"></script>
  </head>
  <body> 
@@ -42,24 +42,23 @@
 
    <div id="input">
     <form action="/user/1/jobs" method="post">
-      <fieldset>
+      <fieldset id="metadata">
         <p>Create new job...</p>
         <label>Cluster Size: </label>
         <input id="nodes" />
 
         <label>Data URL: </label>
         <input id="data_url" />
-
-        <label>Cluster Size: </label>
-        <input id="nodes" />
       </fieldset>
       <fieldset id="editors">
         <label>Mapper Code: </label>
         <textarea id="mapper_code"></textarea>
 
         <label>Reducer Code: </label>
-        <textarea id="reducer_code"></textarea>
+        <textarea id="recuder_code"></textarea>
       </fieldset>
+      <button>Create</button>
+      <div id="response-status">Test Response</div>
     </form>
    </div>
    
@@ -71,7 +70,7 @@
     </p>
     <ul id="commands">
       <li>[f5] Jobs</li>
-      <!--li>[f6] New Job</li-->
+      <li>[f6] New Job</li>
       <li>[f7] Logoff</li>
     </ul>
    </div>
